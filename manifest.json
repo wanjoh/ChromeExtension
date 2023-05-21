@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "Cool pepe",
+  "description": "Bypasses those annoying 'login to view' popups that disable scrolling",
+  "version": "1.0.2",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup/base.html",
+    "default_icon": "images/icon.png"
+  },
+  "permissions":["activeTab", "scripting"],
+  "content_scripts": [{
+    "js": ["scripts/content.js"],
+    "matches": ["http://*/*", "https://*/*"]
+  }]
+}
